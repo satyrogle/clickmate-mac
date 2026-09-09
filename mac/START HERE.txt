@@ -1,0 +1,67 @@
+CLICKMATE FOR ANU'S MAC
+
+1. Unzip the folder on the Mac and double-click OPEN ClickMate.command.
+2. If it opens python.org, install Python 3.13 or 3.14 using its macOS universal2
+   installer, then double-click OPEN ClickMate.command again.
+3. Allow Terminal (or Python if listed) under System Settings > Privacy & Security:
+   Accessibility AND Input Monitoring. Quit and reopen the launcher afterward.
+
+This is a Mac-run source package, not a signed standalone .app. Setup needs an
+internet connection once. It does not require Xcode, a Windows VM, or an extension.
+If macOS blocks this downloaded launcher, use its normal Privacy & Security
+review for this specific file. Do not disable Gatekeeper globally.
+
+YOUR FIRST FLOW
+
+- PASTE ORDER IDS: the current Windows queue is preloaded on the first launch.
+  Check it before running: later Windows changes do not sync to this Mac.
+- SAVED TEXT: the existing reusable comment is preloaded. You can change it.
+- SET SEARCH BAR: switch to TRIRIGA in the countdown, then click inside search once.
+- Put a sample ID in that search bar manually, ready to press Enter.
+- RECORD: switch to TRIRIGA in the countdown. Start with ENTER, click the nested
+  result link, then do the rest normally. Typing/pasting is remembered automatically.
+- Wait for the search page to return; press CONTROL + OPTION + ESCAPE to stop.
+- If you completed the sample ticket while recording, remove it from PASTE ORDER
+  IDS before running. Recording does not remove an ID automatically.
+- TEST NEXT processes one ID. Check the result in TRIRIGA, then RUN BATCH.
+
+Every ticket: click search > Command+A > paste ID > your recorded Enter > your
+nested-link click > rest of flow. No additional Enter or result click is injected.
+
+CONTROLS
+
+- CONTROL + OPTION + ESCAPE stops recording or playback anywhere. Fn+F8 is another
+  stop key when the Mac sends function keys to apps.
+- CLEAR FLOW deletes all steps but keeps the queue and saved text.
+- DELETE SELECTED deletes highlighted steps. EDIT STEP changes recorded text.
+- SAVED TEXT stores values such as comment. A text step can contain {{comment}}
+  to reuse its current value. An exact match is linked automatically on recording.
+- CHANGE WAIT changes the delay before a selected step. If a nested link loads
+  slowly, increase its wait. Timing is recorded, not automatic page detection.
+- Wait between work orders defaults to 12 seconds. Add more for slow reloads.
+- EXPORT backs up the Mac flow, text and queue in one JSON file.
+
+This Mac uses different coordinates from the Windows PC, so the Windows clicks
+are not imported. Record once on the Mac; keep its browser size and zoom fixed.
+The Mac's own mouse, keyboard and clipboard are used. You can work on the Windows
+PC at the same time; don't use Anu's Mac for something else during playback.
+Keep the Mac awake, unlocked and connected; don't close the laptop lid. ClickMate
+requests prevention of idle sleep during playback and releases it when stopped.
+
+Queue progress is saved after each full replay. It means the steps ran, not that
+TRIRIGA confirmed completion. If stopped mid-ticket, the ID stays in the queue:
+check that ticket, restore the search screen, and adjust the list before restarting.
+The recorder does not choose attachment files for you: if the flow uses one,
+copy it to the Mac and record its selection there. Do not record login/passwords.
+
+Local data: ~/Library/Application Support/ClickMate Mac/flow.json
+Small local runtime: ~/Library/Application Support/ClickMate Mac/runtime
+No screenshot/video recordings or browser downloads are stored by ClickMate.
+
+Built and logic-tested on Windows. macOS hooks, permission prompts, display
+coordinates and live TRIRIGA playback still need testing on the actual Mac.
+
+References:
+https://www.python.org/downloads/macos/
+https://www.python.org/download/mac/tcltk/
+https://pynput.readthedocs.io/en/latest/limitations.html
